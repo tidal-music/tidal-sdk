@@ -29,7 +29,7 @@ presented in this list.
 * Enable TIDAL Developer Platform
     * The implementations of the TIDAL SDK shall be made publicly available, playing a crucial part in
       the [TIDAL Developer Platform](https://developer.tidal.com) initiative as a complement to, and extension of,
-      our [TIDAL API](https://developer.tidal.com/documentation/api/api-overview).
+      the TIDAL API.
 * Define domains and ownership
     * The proposed mindset will result in each module also defining the responsibilities of a service, a service that
       potentially also includes backend functionality. As such, each module defines a clear domain that can also be
