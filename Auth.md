@@ -174,6 +174,17 @@ Void logout();
 Promise<Credentials, Common.RetryableError, Common.IllegalConfigurationError> getCredentials(String? apiErrorSubStatus=null);
 ```
 
+### isUserLoggedIn
+
+```java
+/**
+ * Convenience function to quickly check if a user is logged in.
+ *
+ * @return True if a user is logged in, false otherwise.
+ */
+Bool isUserLoggedIn();
+```
+
 ### bus
 
 ```java
