@@ -70,19 +70,17 @@ Exposes functionality for sending events and monitoring the status of the TEP TL
 /**
  * In order to simplify the implementation while still maintaining correct function, high performance and reduced load on backend, a design decision has been made that the EventSender shall only ever exist in one instance.
  *
- * @param tlConsumerUri URI identifying the TL Consumer ingest endpoint.
  * @param credentialsProvider A credentials provider, used by the EventProducer to get access token.
  * @param maxDiskUsageBytes The maximum amount of disk the EventProducer is allowed to use for temporarily storing events before they are sent to TL Consumer.
  * @param blockedConsentCategories Used to initialize the blockedConsentCategories property
- * @param appName added as a header for each sent event
  * @param appVersion added as a header for each sent event
+ * @param tlConsumerBaseUri Optional base URI to the TL Consumer ingest endpoint. Defaults to TIDAL production environment.
  */
-init(URI tlConsumerUri,
-     Auth.CredentialsProvider credentialsProvider,
+init(Auth.CredentialsProvider credentialsProvider,
      Int maxDiskUsageBytes,
      Set<ConsentCategory> blockedConsentCategories,
-     String appName,
-     String appVersion);
+     String appVersion,
+     URI? tlConsumerBaseUri="https://ec.tidal.com/api");
 ```
 
 ### sendEvent
