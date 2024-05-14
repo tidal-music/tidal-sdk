@@ -64,12 +64,10 @@ In order to illustrate the separation between these two parts, this design is br
  * Initializes the Player. Player.init() also initializes the PE and an OE and lists parameters required for OE / PE initialization.
  *
  * @param credentialsProvider A credentials provider, used by the Player to get access token.
- * @param clientToken Used to initialize the Player's clientToken property.
- * @param isOffline Used to initialize the Player's isOffline property
+ * @param eventSender An event sender.
  */
 init(Auth.CredentialsProvider credentialsProvider,
-     String clientToken,
-     Bool isOfflineMode);
+     EventProducer.EventSender eventSender);
 ```
 
 ### clearCache
@@ -88,7 +86,6 @@ Void clearCache();
 /**
  * Property used by the Player to know if the app is in online or offline mode.
  * Must be updated by the app each time the app changes offline mode.
- * Initialized using the corresponding value passed in the init function.
  */
 Bool isOfflineMode;
 ```
