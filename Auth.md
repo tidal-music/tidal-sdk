@@ -41,11 +41,11 @@ OAuth 2.0.
 
 # API
 
-## Auth
+## AuthConfig
 
-The Auth role supplies functionality for managing access tokens and executing OAuth flows. The Auth role supplies
-interface segregation of the Auth modules core functionality, exposing functionality that will typically be used
-centrally in the app.
+The `AuthConfig` role supplies functionality for configuring the Auth module and executing OAuth flows. The AuthConfig 
+role supplies interface segregation of the Auth modules core functionality, exposing functionality that will typically 
+be used centrally in the app.
 
 ### init
 
@@ -156,6 +156,9 @@ Void logout();
 ```
 
 ## CredentialsProvider
+
+The `CredentialsProvider` role supplies functionality for retrieving credentials from the Auth module. It is intended to 
+be used in all places in the app where credentials are needed.
 
 ### getCredentials
 
@@ -326,7 +329,7 @@ The levels are:
 
 ## Configuration
 
-The Auth module can be configured using the functions available in the Auth role. For any given point in time, the
+The Auth module can be configured using the functions available in the `AuthConfig` role. For any given point in time, the
 configuration of the Auth module decides what level of credentials the Auth module will provide when `getCredentials` is
 called. Configuration includes actions such as logging in/out users, setting client id and client secret or defining
 which previously existing state the Auth module shall continue from.

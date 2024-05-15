@@ -60,9 +60,9 @@ The _EventProducer_ module represents an implementation of the TEP TL Producer.
 
 # API
 
-## EventSender
+## EventProducerConfig
 
-Exposes functionality for sending events and monitoring the status of the TEP TL.
+The `EventProducerConfig` role exposes functionality for configuring the EventProducer.
 
 ### init
 
@@ -82,6 +82,20 @@ init(Auth.CredentialsProvider credentialsProvider,
      String appVersion,
      URI? tlConsumerBaseUri="https://ec.tidal.com/api");
 ```
+
+### blockedConsentCategories
+
+```java
+/**
+ * Defines a set of consent categories for which the EventProducer shall drop events.
+ * Initialized by the corresponding parameter in the init function.
+ */
+Set<ConsentCategory> blockedConsentCategories;
+```
+
+## EventSender
+
+Exposes functionality for sending events and monitoring the status of the TEP TL.
 
 ### sendEvent
 
@@ -123,20 +137,6 @@ Bool isOutage;
  * The bus used by the EventSender for all "asynchronous" communication.
  */
 Bus<OutageStartError, OutageEndMessage> bus;
-```
-
-## Config
-
-The Config role exposes functionality for configuring the EventProducer.
-
-### blockedConsentCategories
-
-```java
-/**
- * Defines a set of consent categories for which the EventProducer shall drop events.
- * Initialized by the corresponding parameter in the init function.
- */
-Set<ConsentCategory> blockedConsentCategories;
 ```
 
 ## Types

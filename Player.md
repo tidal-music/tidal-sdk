@@ -90,6 +90,49 @@ Void clearCache();
 Bool isOfflineMode;
 ```
 
+## PlaybackEngineConfig
+
+### loudnessNormalizationMode
+
+```java
+/**
+ * The configured loudness normalization mode.
+ * Persisted by the Player module.
+ */
+LoudnessNormalizationMode loudnessNormalizationMode;
+```
+
+### loudnessNormalizationPreAmp
+
+```java
+/**
+ * The configured pre amplification value to be used for loudness normalization. 
+ * The value should in general be 4, except for AndroidTv, AppleTv and AirPlay where it should be 0.
+ * Persisted by the Player module.
+ */
+Int loudnessNormalizationPreAmp;
+```
+
+### streamingWifiAudioQuality
+
+```java
+/**
+ * Configured AudioQuality to use when streaming over WiFi.
+ * Persisted by the Player module.
+ */
+AudioQuality streamingWifiAudioQuality;
+```
+
+### streamingCellularAudioQuality
+
+```java
+/**
+ * Configured AudioQuality to use when streaming over cellular.
+ * Persisted by the Player module.
+ */
+AudioQuality streamingCellularAudioQuality;
+```
+
 ## PlaybackEngine
 
 ### load
@@ -239,47 +282,36 @@ Bus<
         StreamingPrivilegesRevokedMessage> bus;
 ```
 
-## PlaybackEngineConfig
+## OfflineEngineConfig
 
-### loudnessNormalizationMode
+### offlineAudioQuality
 
 ```java
 /**
- * The configured loudness normalization mode.
+ * Configured AudioQuality used for offlining.
  * Persisted by the Player module.
  */
-LoudnessNormalizationMode loudnessNormalizationMode;
+AudioQuality offlineAudioQuality;
 ```
 
-### loudnessNormalizationPreAmp
+### offlineVideoQuality
 
 ```java
 /**
- * The configured pre amplification value to be used for loudness normalization. 
- * The value should in general be 4, except for AndroidTv, AppleTv and AirPlay where it should be 0.
+ * Configured VideoQuality used for offlining.
  * Persisted by the Player module.
  */
-Int loudnessNormalizationPreAmp;
+VideoQuality offlineVideoQuality;
 ```
 
-### streamingWifiAudioQuality
+### offlineOverCellular
 
 ```java
 /**
- * Configured AudioQuality to use when streaming over WiFi.
+ * Configures whether offlining should be allowed over cellular network.
  * Persisted by the Player module.
  */
-AudioQuality streamingWifiAudioQuality;
-```
-
-### streamingCellularAudioQuality
-
-```java
-/**
- * Configured AudioQuality to use when streaming over cellular.
- * Persisted by the Player module.
- */
-AudioQuality streamingCellularAudioQuality;
+Bool offlineOverCellular;
 ```
 
 ## OfflineEngine
@@ -354,38 +386,6 @@ Bus<
         OfflineDoneMessage,
         OfflineDeletedMessage,
         AllOfflinesDeletedMessage> bus;
-```
-
-## OfflineEngineConfig
-
-### offlineAudioQuality
-
-```java
-/**
- * Configured AudioQuality used for offlining.
- * Persisted by the Player module.
- */
-AudioQuality offlineAudioQuality;
-```
-
-### offlineVideoQuality
-
-```java
-/**
- * Configured VideoQuality used for offlining.
- * Persisted by the Player module.
- */
-VideoQuality offlineVideoQuality;
-```
-
-### offlineOverCellular
-
-```java
-/**
- * Configures whether offlining should be allowed over cellular network.
- * Persisted by the Player module.
- */
-Bool offlineOverCellular;
 ```
 
 ## Types
