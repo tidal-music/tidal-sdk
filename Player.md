@@ -57,11 +57,13 @@ In order to illustrate the separation between these two parts, this design is br
 
 ## Player
 
+The `Player` role exposes initialization and configuration.
+
 ### init
 
 ```java
 /**
- * Initializes the Player. Player.init() also initializes the PE and an OE and lists parameters required for OE / PE initialization.
+ * Initializes the Player. Also initializes the PE and an OE.
  *
  * @param credentialsProvider A credentials provider, used by the Player to get access token.
  * @param eventSender An event sender.
@@ -70,27 +72,19 @@ init(Auth.CredentialsProvider credentialsProvider,
      EventProducer.EventSender eventSender);
 ```
 
-### clearCache
-
-```java
-/**
- * A call to this function will immediately clear all caches that the Player use.
- * Thread safe
- */
-Void clearCache();
-```
-
 ### isOfflineMode
 
 ```java
 /**
- * Property used by the Player to know if the app is in online or offline mode.
+ * Property used by the Player (both PE and OE) to know if the app is in online or offline mode.
  * Must be updated by the app each time the app changes offline mode.
  */
 Bool isOfflineMode;
 ```
 
 ## PlaybackEngineConfig
+
+The `PlaybackEngineConfig` role exposes configuration for the PE.
 
 ### loudnessNormalizationMode
 
@@ -134,6 +128,8 @@ AudioQuality streamingCellularAudioQuality;
 ```
 
 ## PlaybackEngine
+
+The `PlaybackEngine` role exposes functionality of the PE.
 
 ### load
 
@@ -284,6 +280,8 @@ Bus<
 
 ## OfflineEngineConfig
 
+The `OfflineEngineConfig` role exposes configuration for the OE.
+
 ### offlineAudioQuality
 
 ```java
@@ -315,6 +313,8 @@ Bool offlineOverCellular;
 ```
 
 ## OfflineEngine
+
+The `OfflineEngine` role exposes functionality of the OE.
 
 ### offline
 
@@ -941,7 +941,7 @@ respective event documentation for further information.
 ## Streaming privileges
 
 The Player must implement Streaming Privileges support, a solution that guarantees a user cannot play on multiple
-devices simultaneously, using the same subscription. See streaming privileges documentation for further infromation.
+devices simultaneously, using the same subscription. See streaming privileges documentation for further information.
 
 Whenever the Player receives a message that streaming privileges have been revoked, it shall pause playback and fire a
 `StreamingPrivilegesRevokedMessage`.

@@ -60,9 +60,9 @@ The _EventProducer_ module represents an implementation of the TEP TL Producer.
 
 # API
 
-## EventProducerConfig
+## EventProducer
 
-The `EventProducerConfig` role exposes functionality for configuring the EventProducer.
+The `EventProducer` role exposes initialization and configuration.
 
 ### init
 
@@ -95,7 +95,7 @@ Set<ConsentCategory> blockedConsentCategories;
 
 ## EventSender
 
-Exposes functionality for sending events and monitoring the status of the TEP TL.
+The `EventSender` role exposes functionality for sending events and monitoring the status of the TEP TL.
 
 ### sendEvent
 
