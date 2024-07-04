@@ -156,7 +156,7 @@ Void load(MediaProduct mediaProduct);
  *
  * @param mediaProduct The media product to set as next
  */
-Void next(MediaProduct mediaProduct);
+Void setNext(MediaProduct mediaProduct);
 ```
 
 ### play
