@@ -800,6 +800,21 @@ class MediaProductTransitionMessage {
 }
 ```
 
+### NextMediaProductSetMessage
+
+```java
+/**
+ * Message fired to signify successful execution of a setNext call.
+ */
+class MediaProductTransitionMessage {
+
+    /**
+     * Loopback of the MediaProduct successfully set as next.
+     */
+    MediaProduct nextMediaProduct;
+}
+```
+
 ### PlaybackStateChangedMessage
 
 ```java
