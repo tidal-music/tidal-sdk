@@ -135,7 +135,7 @@ The `PlaybackEngine` role exposes functionality of the PE.
 
 ```java
 /**
- * Will reset PE from any current state and immediately make a transition to the selected media product. Asset position describes where in the media product to load to. When this call returns, the requested media product is considered the active one.
+ * Will reset PE from any current state and immediately make a transition to the selected media product.
  * Playback state will immediately change to NOT_PLAYING.
  * Progress can be tracked via the MediaProductTransitionMessage and PlaybackStateChangedMessage.
  * Async (will return immediately) and thread safe
