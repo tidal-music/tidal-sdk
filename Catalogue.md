@@ -1,6 +1,6 @@
 # Catalogue
 
-The TIDAL Catalogue module is a wrapper around our [Catalogue API](https://developer.tidal.com/reference/web-api?spec=catalogue).
+The TIDAL Catalogue module is a wrapper around our [Catalogue API](https://developer.tidal.com/reference/web-api?spec=catalogue-v2&ref=get-albums-v2).
 
 It aims to provide simplified access to the API for clients.
 
