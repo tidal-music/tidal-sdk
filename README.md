@@ -4,8 +4,8 @@ The TIDAL SDK consists of a set of software modules that defines, enables and si
 by TIDAL.
 
 We aim to align functionality, naming, concepts and high level architecture across different implementations of the
-TIDAL SDK (e.g. [TIDAL SDK for Web](https://github.com/tidal-music/tidal-sdk-web), TIDAL SDK for Android and TIDAL SDK
-for iOS) by writing engineering design docs for the SDK modules in
+TIDAL SDK (e.g. [TIDAL SDK for Web](https://github.com/tidal-music/tidal-sdk-web), [TIDAL SDK for Android](https://github.com/tidal-music/tidal-sdk-android) and [TIDAL SDK
+for iOS](https://github.com/tidal-music/tidal-sdk-ios)) by writing engineering design docs for the SDK modules in
 a [platform](https://en.wikipedia.org/wiki/Computing_platform)-agnostic way. Each design doc outlines the
 responsibility, [API](https://en.wikipedia.org/wiki/API), requirements, functionality, intent and semantics of a module,
 without enforcing implementation in a certain programming language or platform.
