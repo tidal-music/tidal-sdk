@@ -568,6 +568,12 @@ class MediaProduct {
      * Passed through to corresponding PlayLog event
      */
     String sourceId;
+    
+    /**
+     * Optional extra attributes of the media product. 
+     * Passed through to corresponding PlayLog event
+     */
+    Extras extras;
 }
 ```
 
