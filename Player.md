@@ -275,6 +275,7 @@ Bus<
         Common.NetworkError,
         MediaProductTransitionMessage,
         PlaybackStateChangedMessage,
+        PlaybackQualityChangedMessage,
         StreamingPrivilegesRevokedMessage> bus;
 ```
 
@@ -818,6 +819,24 @@ class PlaybackStateChangedMessage {
      * The playback state in PE.
      */
     PlaybackState playbackState;
+}
+```
+
+### PlaybackQualityChangedMessage
+
+```java
+/**
+ * Message fired when playback quality changes during ABR (Adaptive Bitrate) streaming.
+ * This occurs when the adaptive bitrate switches to a different quality variant mid-playback.
+ */
+class PlaybackQualityChangedMessage {
+
+    /**
+     * Information about the active playback session.
+     *
+     * Will contain the changed fields (like: quality, codec, sample rate, sample depth, bit rate).
+     */
+    PlaybackContext playbackContext;
 }
 ```
 
