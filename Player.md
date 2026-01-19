@@ -156,7 +156,7 @@ Void load(MediaProduct mediaProduct);
  *
  * @param mediaProduct The media product to set as next
  */
-Void next(MediaProduct mediaProduct);
+Void setNext(MediaProduct mediaProduct);
 ```
 
 ### play
@@ -809,6 +809,21 @@ class MediaProductTransitionMessage {
      * null if the playback engine just stopped playing (no media product set as next when the currently active ended).
      */
     PlaybackContext playbackContext;
+}
+```
+
+### NextMediaProductSetMessage
+
+```java
+/**
+ * Message fired to signify successful execution of a setNext call.
+ */
+class MediaProductTransitionMessage {
+
+    /**
+     * Loopback of the MediaProduct successfully set as next.
+     */
+    MediaProduct nextMediaProduct;
 }
 ```
 
