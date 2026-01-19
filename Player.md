@@ -503,10 +503,15 @@ enum AudioQuality {
     LOSSLESS,
 
     /**
+     * @deprecated use HI_RES_LOSSLESS instead
+     */
+    HI_RES,
+
+    /**
      * The audio stream is of high resolution quality.
      * (E.g. > CD quality)
      */
-    HI_RES
+    HI_RES_LOSSLESS
 }
 ```
 
