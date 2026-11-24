@@ -1,0 +1,6 @@
+pre-commit:
+  commands:
+    rustfmt:
+      glob: "*.rs"
+      run: rustfmt --edition 2021 --config skip_children=true {staged_files}
+      stage_fixed: true

@@ -1,0 +1,9 @@
+name: player
+rust:
+  directory: ../../..
+  manifestPath: crates/player/Cargo.toml
+bindings:
+  ts: generated
+wasm2:
+  features: [uniffi]
+  cargoExtras: [--locked]

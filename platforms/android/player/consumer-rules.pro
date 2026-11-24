@@ -1,0 +1,4 @@
+-keep class com.sun.jna.** { *; }
+-keep class * implements com.sun.jna.** { *; }
+-keep class uniffi.player.** { *; }
+-dontwarn java.awt.**

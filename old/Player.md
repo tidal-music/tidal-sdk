@@ -1168,7 +1168,7 @@ The resulting table was then presented as two histograms with 30 and 1000 bucket
 * X-axis: Calculated scale factor.
 * Y-axis: percentage of tracks that have a scale factor in the corresponding bucket.
 
-![Replay Gain](https://github.com/tidal-music/tidal-sdk/blob/main/media/player-reduced-gain-scale-factor.png)
+![Replay Gain](media/player-reduced-gain-scale-factor.png)
 
 These visualizations show that the 90 percentile of our catalog has a scale factor of 1.2. The 95 percentile has a scale
 factor of 1.6. This means that by setting PVb to 0.8, we would be able to correctly normalize > 90% of our catalog,

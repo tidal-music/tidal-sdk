@@ -1,0 +1,41 @@
+{
+  "name": "@tidal/player-web",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Browser platform adapters for the shared player, with its generated TypeScript/Wasm bindings.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tidal-music/tidal-sdk"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./bindings": {
+      "types": "./dist/src/bindings.d.ts",
+      "default": "./dist/bindings.js"
+    },
+    "./player.wasm": "./dist/player.wasm"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "generate": "node tools/generate.mjs",
+    "build": "node tools/build.mjs",
+    "check": "tsc --noEmit",
+    "test:browser": "node tests/run-browser.mjs",
+    "prepack": "pnpm generate && pnpm build"
+  },
+  "dependencies": {
+    "@ubjs/core": "0.31.0-6",
+    "@ubjs/wasm": "0.31.0-6",
+    "shaka-player": "5.3.2"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10",
+    "typescript": "5.9.3",
+    "uniffi-bindgen-react-native": "0.31.0-6"
+  }
+}

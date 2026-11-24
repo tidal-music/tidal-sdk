@@ -1,0 +1,48 @@
+[package]
+name = "player"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.86"
+publish = false
+
+[lib]
+crate-type = ["lib", "staticlib", "cdylib"]
+
+[features]
+uniffi = ["dep:uniffi", "dep:uniffi_core", "dep:uniffi-runtime-wasm"]
+uniffi-bindgen = ["uniffi", "uniffi/cli"]
+
+[[bin]]
+name = "player-bindgen"
+path = "uniffi-bindgen.rs"
+required-features = ["uniffi-bindgen"]
+
+[dependencies]
+async-trait = "0.1"
+channel = { path = "../channel" }
+fastrand = { version = "2", features = ["js"] }
+derive_more = { version = "2.1", default-features = false, features = ["from", "try_into"] }
+tokio = { version = "1", features = ["rt", "sync", "macros", "time"] }
+thiserror = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+url = "2"
+web-time = "1"
+uuid = { version = "1", features = ["v4", "js"] }
+
+[dev-dependencies]
+syn = { version = "2", features = ["full", "visit"] }
+
+[target.'cfg(target_arch = "wasm32")'.dev-dependencies]
+wasm-bindgen-test = "0.3"
+
+[target.'cfg(not(target_arch = "wasm32"))'.dev-dependencies]
+tokio = { version = "1", features = ["time", "rt-multi-thread", "test-util"] }
+
+[target.'cfg(not(target_arch = "wasm32"))'.dependencies]
+uniffi = { version = "=0.31.2", optional = true, default-features = false, features = ["tokio"] }
+
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+uniffi = { version = "=0.31.2", optional = true, default-features = false }
+uniffi_core = { version = "=0.31.2", optional = true, default-features = false, features = ["wasm-unstable-single-threaded"] }
+uniffi-runtime-wasm = { version = "=0.31.0-6", optional = true }

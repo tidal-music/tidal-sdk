@@ -34,7 +34,7 @@ The TL is agnostic to the implementation of the AL, so multiple AL implementatio
 or several _AL Producers_ with corresponding _AL Consumers_ using the same _TL Producer/Consumer_, as shown in the
 figure below.
 
-![TIDAL Event Platform](https://github.com/tidal-music/tidal-sdk/blob/main/media/event-producer-tidal-event-platform.png)
+![TIDAL Event Platform](media/event-producer-tidal-event-platform.png)
 
 The responsibility of the AL is to make sure that the content, format and structure of event headers and payload are
 correct and fulfills a certain business purpose. All requirements related to this functionality are attached to the AL.
@@ -367,7 +367,7 @@ the `sendEvent` function can immediately hand over to a separate thread and retu
 that it blocks the calling thread for as short a duration as possible. The submitter logic is also responsible for
 handling outage notifications, as described in the diagram below.
 
-![Submitter](https://github.com/tidal-music/tidal-sdk/blob/main/media/event-producer-submitter.png)
+![Submitter](media/event-producer-submitter.png)
 
 Some comments to the diagram:
 
@@ -421,7 +421,7 @@ online or not. As long as the app is executing, the Scheduler shall be running
 The diagram below describes the intended logic of the Scheduler. It aims at being as simple as possible to implement,
 but at the same time fulfilling the requirements for the EventProducer.
 
-![Scheduler](https://github.com/tidal-music/tidal-sdk/blob/main/media/event-producer-scheduler.png)
+![Scheduler](media/event-producer-scheduler.png)
 
 Some comments to the diagram:
 

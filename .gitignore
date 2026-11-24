@@ -1,0 +1,11 @@
+target/
+.build/
+/Package.resolved
+.gradle/
+platforms/android/**/build/
+.DS_Store
+.idea/
+platforms/ios/PlayerFFI.xcframework/
+platforms/ios/Sources/PlayerRS/Player.swift
+platforms/android/player/generated/
+platforms/android/player/local.properties

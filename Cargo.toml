@@ -1,0 +1,7 @@
+[workspace]
+resolver = "2"
+members = ["crates/channel", "crates/player"]
+
+[profile.release]
+lto = true
+strip = true
