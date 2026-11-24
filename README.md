@@ -1,7 +1,7 @@
 # TIDAL SDK
 
-An exploration of moving TIDAL client business logic into shared Rust crates that run on
-iOS, Android and the web. Each crate owns the logic every platform would otherwise duplicate;
+The TIDAL SDK provides TIDAL client business logic as shared Rust crates that run on iOS,
+Android and the web. Each crate owns the logic every platform would otherwise duplicate;
 the host app injects platform capabilities, such as HTTP, credentials, DRM and media engines,
 through traits called ports. UniFFI generates the Swift, Kotlin and TypeScript bindings.
 
@@ -36,20 +36,15 @@ script that builds them.
 
 ## Getting started
 
-Install the formatting hook once after cloning. With `lhm` installed it is picked up
-automatically.
-
-```sh
-brew install lefthook
-rustup component add rustfmt
-lefthook install
-```
-
-Run all Rust tests from the repository root:
+Run all Rust tests and check formatting from the repository root:
 
 ```sh
 cargo test --workspace --locked
+cargo fmt --all --check
 ```
+
+`lefthook.yml` formats staged Rust files with rustfmt before each commit. With `lhm` it runs
+automatically; otherwise install [lefthook](https://lefthook.dev) and run `lefthook install`.
 
 Check the browser build of the shared crates and run their browser tests:
 
